@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'net.hmcts'
+version = '0.0.1-SNAPSHOT'
+
+description = """spring-jms-demo"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version:'2.1.1.RELEASE'
+    compile group: 'org.springframework', name: 'spring-jms', version:'5.1.3.RELEASE'
+    compile group: 'org.apache.qpid', name: 'qpid-jms-client', version:'0.38.0'
+    compile group: 'org.springframework.retry', name: 'spring-retry', version:'1.1.5.RELEASE'
+    compile group: 'org.springframework', name: 'spring-aspects', version:'5.1.3.RELEASE'
+    compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.25'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.1.1.RELEASE'
+}
